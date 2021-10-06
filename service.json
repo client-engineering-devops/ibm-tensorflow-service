@@ -1,0 +1,22 @@
+{
+  "org": "$HZN_ORG_ID",
+  "label": "",
+  "url": "$SERVICE_NAME",
+  "version": "$SERVICE_VERSION",
+  "arch": "$ARCH",
+  "public": false,
+  "sharable": "singleton",
+  "requiredServices": [],
+  "userInput": [
+    { "name": "model_config_file", "label": "Model Config", "type": "string", "defaultValue": "/models/models.config"},
+    { "name": "model_config_file_poll_wait_seconds", "label": "Model Config Poll", "type": "int", "defaultValue": "60" }
+  ],
+  "deployment": {
+    "services": {
+      "tensorflow-server": {
+        "image": "$REGISTRY_SERVER/$SERVICE_NAME:$SERVICE_VERSION",
+        "binds": ["tensorflow_volume:/s:rw"]
+      }
+    }
+  }
+}
