@@ -15,7 +15,7 @@
     "services": {
       "tensorflow-server": {
         "image": "$REGISTRY_SERVER/$SERVICE_NAME:$SERVICE_VERSION",
-        "binds": ["SHARED_VOLUME:/s:rw"]
+        "binds": ["$SHARED_VOLUME:/s:rw"]
       }
     }
   }
