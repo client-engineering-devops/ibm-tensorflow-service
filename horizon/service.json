@@ -1,10 +1,12 @@
 {
   "org": "$HZN_ORG_ID",
-  "label": "",
+  "label": "$SERVICE_NAME for $ARCH",
   "url": "$SERVICE_NAME",
   "version": "$SERVICE_VERSION",
   "arch": "$ARCH",
   "public": false,
+  "description": "Tensorflow Model Server Service",
+  "documentation": "https://github.com/itg-devops/ibm-tensorflow-service",
   "sharable": "singleton",
   "requiredServices": [],
   "userInput": [
@@ -13,9 +15,10 @@
   ],
   "deployment": {
     "services": {
-      "tensorflow-server": {
-        "image": "$REGISTRY_SERVER/$SERVICE_NAME:$SERVICE_VERSION",
-        "binds": ["$SHARED_VOLUME:/s:rw"]
+      "$SERVICE_NAME": {
+        "image": "$SERVICE_IMAGE",
+        // "binds": ["$SHARED_VOLUME:/s:rw"]
+        //"ports": [ { "HostIP": "0.0.0.0", "HostPort": "3000:3000/tcp" } ]
       }
     }
   }

@@ -1,0 +1,8 @@
+{
+    "HZN_ORD_ID": "itg",
+    "MetadataVars": {
+      "DOCKER_IMAGE_BASE": "quay.io/ibmtechgarage",
+      "SERVICE_NAME": "tensorflow-server",
+      "SERVICE_VERSION": "1.0.4"
+   }
+}
